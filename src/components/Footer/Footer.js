@@ -6,7 +6,7 @@ export const Footer = () => {
     <div className={styles.footer}>
       <div className="container">
         <div className="row">
-          <div className="col">
+          <div className="col text-center">
             <a className={styles.footerLink} href="http://ganshina.com">Go to main page</a>
           </div>
         </div>
