@@ -29,7 +29,10 @@ https://codepen.io/theigmo87/pen/cwHyK
 }
 
 .source {
-  display: none;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  opacity: 0;
 }
 
 .checkbox {
@@ -87,4 +90,8 @@ https://codepen.io/theigmo87/pen/cwHyK
 .checkbox.checked::before {
   height: 5px;
   animation: checkTop 0.4s ease 0s forwards;
+}
+
+.source:focus + .checkbox {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }

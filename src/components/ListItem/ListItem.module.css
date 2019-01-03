@@ -13,7 +13,7 @@
   width: 100%;
   height: 1px;
   background-color: #ced4da;
-  padding: 0 40px;
+  padding: 0 15px 0 40px;
   background-clip: content-box;
 }
 
@@ -54,10 +54,26 @@
 
 .btnDelete {
   margin-left: auto;
-  margin-right: 25px;
   opacity: 0;
 }
 
-.todoItem:hover .btnDelete {
+.todoItem:hover .btnDelete,
+.btnDelete:focus {
   opacity: 1;
+}
+
+@media (max-width: 767px) {
+  .todoItem {
+    padding: 5px 0;
+  }
+
+  .todoItem::after {
+    padding: 0 0 0 25px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .btnDelete {
+    opacity: 1;
+  }
 }
