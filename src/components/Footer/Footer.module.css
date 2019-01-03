@@ -1,0 +1,11 @@
+.footer {
+  margin-top: auto;
+  border-top: 1px solid #ced4da;
+  background: #ffffff;
+}
+
+.footerLink {
+  display: inline-block;
+  padding: 5px;
+  margin: 10px 0;
+}
