@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import AddTodo from '../AddTodo/AddTodo';
 import List from '../List/List';
+import { Footer } from '../Footer/Footer';
 import Data from '../../data.json';
 import './App.css';
+
+const APP_NAME = 'ReactSimpleTodo';
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      todos: Data,
+      todos: localStorage.getItem(APP_NAME) ? JSON.parse(localStorage.getItem(APP_NAME)) : Data,
       lastId: Data.length,
       currentItem: {
         id: null,
@@ -31,7 +34,7 @@ class App extends Component {
 
     this.setState({
       todos
-    })
+    }, this.updateLocalStorage)
   }
 
   // add new item to the to-do list
@@ -57,7 +60,7 @@ class App extends Component {
 
         // save new lastId
         lastId: newItem.id
-      })
+      }, this.updateLocalStorage)
     }
   }
 
@@ -81,7 +84,11 @@ class App extends Component {
 
     this.setState({
       todos: filteredItems,
-    })
+    }, this.updateLocalStorage)
+  }
+
+  updateLocalStorage() {
+    localStorage.setItem(APP_NAME, JSON.stringify(this.state.todos))
   }
 
   render() {
@@ -103,6 +110,8 @@ class App extends Component {
             </div>
           </div>
         </div>
+
+        <Footer />
       </div>
     );
   }
