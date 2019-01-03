@@ -1,0 +1,63 @@
+.todoItem {
+  padding: 5px 15px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.todoItem::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #ced4da;
+  padding: 0 40px;
+  background-clip: content-box;
+}
+
+.todoItem:last-child::after {
+  content: none;
+}
+
+.todoItem.completed .todoText {
+  transition: color 0.4s ease-in-out;
+  color: #999fa5;
+  position: relative;
+}
+
+.todoItem .todoText::before {
+  content: '';
+  width: 100%;
+  height: 1px;
+  background-color: #999fa5;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background-clip: content-box;
+  padding: 0 12px;
+  opacity: 0;
+}
+
+.todoItem.completed .todoText::before {
+  transition: opacity 0s ease 0.38s;
+  opacity: 1;
+}
+
+.todoText {
+  padding: 0 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.btnDelete {
+  margin-left: auto;
+  margin-right: 25px;
+  opacity: 0;
+}
+
+.todoItem:hover .btnDelete {
+  opacity: 1;
+}

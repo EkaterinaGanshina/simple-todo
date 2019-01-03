@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "text": "Learn what is create-react-app",
+    "completed": false
+  },
+  {
+    "id": 2,
+    "text": "Create to-do list with multiple components",
+    "completed": false
+  },
+  {
+    "id": 3,
+    "text": "Drink a cup of tea",
+    "completed": false
+  }
+]
